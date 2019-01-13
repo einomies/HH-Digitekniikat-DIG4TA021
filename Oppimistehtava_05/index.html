@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tehtävä 05 MusicBox</title>
+
+    <!-- CSS-määritykset -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href="./css/carousel.css" rel="stylesheet" type="text/css">
+	<link href="./css/lightbox.css" rel="stylesheet" type="text/css">
+	<link href="./css/navbar-fixed-top.css" rel="stylesheet" type="text/css">
+	<link href="./css/tyyli.css" rel="stylesheet" type="text/css">
+	<link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type="text/css">>
+
+    <!-- liitä linkit jqueryn kirjastoon ja bootstrapin js-kirjastoon tänne-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="./js/carousel.js"></script>
+	<script src="./js/jquery.elevateZoom-3.0.8.min.js"></script>
+	<script src="./js/lightbox.min.js"></script>
+
+	<style>
+	.slidingDiv {
+		height:420px;
+		background-color: #99CCFF;
+		padding:10px;
+		margin-top:10px;
+		border-bottom:2px solid #3399FF;
+	}
+	.show_hide {
+		display:none;
+	}
+	</style>
+
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MusicBox</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#etusivu">Etusivu</a></li>
+            <li><a href="#info">Info</a></li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Galleriat<span class="caret"></span></a>
+              <!-- alasvetovalikkoon tulee linkit gallerioihin -->
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#galleria1">Soittimet</a></li>
+                <li><a href="#galleria2">Efektit, PA-laitteet yms</a></li>
+                <li><a href="#galleria3">Juuri saapuneet erikoistuotteet</a></li>
+
+              </ul>
+            </li>
+            <li><a href="#yhteystiedot">Ota yhteyttä</a></li>
+          </ul>
+           <!-- muuta ikonit ja laita linkit facebookiin ja twitteriin -->
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
+           <li><a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
+         </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="jumbotron" id="info">
+      <center>
+        <h1>MusicBox</h1>
+        <h2>Musikanttien virtuaalinen kyläkauppa</h2>
+        <div class="container">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#jumbo_info">Lue lisää</button>
+          <div id="jumbo_info" class="collapse">
+            <p>Meiltä löydät sekä uudet että käytetyt laatutuotteet kilpailukykyiseen hintaan.</p>
+            <p>Myymme paljon uuttakin laatutavaraa, mutta olemme erikoistuneet laadukkaisiin ja huollettuihin käytettyihin soittimiin, äänentoistolaitteisiin ja tarvikkeisiin.</p>
+		  </div>
+        </div>
+      </center>
+    </div>
+
+    <!-- Carousel eli slideshow-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="img/karusellikuva01.jpg" alt="Karusellikuva 1">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Huollot</h1>
+              <p>Teemme soitinhuollot ammattitaidolla ja -ylpeydellä, ja myös kohtuuhinnalla.</p>
+              <p><a class="btn btn-lg btn-primary" href="#accordion" role="button">Info</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/karusellikuva02.jpg" alt="Karusellikuva 2">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Soitin- ja tarvikevalikoima</h1>
+              <p>Seuraamme alan kehitystä tiiviisti unohtamatta kuitenkaan instrumenttien arvokkaita perinteitä.</p>
+              <p><a class="btn btn-lg btn-primary" href="#galleria1" role="button">Valikoimat</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/karusellikuva03.jpg" alt="Karusellikuva 3">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Myyntitili? Täh?</h1>
+              <p>Meidän kauttamme voit myös myydä oman soittimesi. Ota rohkeasti yhteyttä!</p>
+              <p><a class="btn btn-lg btn-primary" href="#yhteystiedot" role="button">Ota yhteyttä</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <!-- lisää kuvat, teksti ja linkit -->
+
+    <div class="container marketing" id="etusivu">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="img/circle01.jpg" alt="Info" style="width: 140px; height: 140px;">
+          <h2>Info</h2>
+          <p>Meiltä saat asiantuntevaa palvelua etenkin käytettyjen arvosoittimien ja muiden musatarvikkeiden suhteen.</p>
+          <p>Teemme yhteistyötä mm. arvostetun amerikkalaisen reverb.comin kanssa.</p>
+          <p><a class="btn btn-default" href="#info" role="button">Lisätietoa &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="img/circle02.jpg" alt="Galleriat" style="width: 140px; height: 140px;">
+          <h2>Galleriat</h2>
+          <p>Kuvagalleriat esittelevät häivähdyksen laajasta ja laadukkaasta valikoimastamme.</p>
+          <p><a class="btn btn-default" href="#galleria1" role="button">Lisätietoa &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="img/circle03.jpg" alt="Yhteystiedot" style="width: 140px; height: 140px;">
+          <h2>Myyntitili?</h2>
+          <p>Tehokas tapa myydä omistamasi soitin. Ota meihin yhteyttä, kerromme lisää. Toimipisteemme sijaitsee Järvenpään keskustassa, hyvien liikenneyhteyksien päässä.</p>
+          <p><a class="btn btn-default" href="#yhteystiedot" role="button">Lisätietoa &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+      <!-- ensiksi tulee info, johon tee "haitarimallilla" teksti ja lisää oikealle kuva -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7" id="alku">
+
+		  <div class="panel-group" id="accordion">
+ 	        <center><h1>Soitinhuolto</h1></center>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h2 class="panel-title">
+				  <center>
+				  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Yleistä huolloista</a>
+				  </center>
+				</h2>
+			  </div>
+			  <div id="collapse1" class="panel-collapse collapse">
+				<div class="panel-body">
+				Teemme myös soitinhuoltoja.
+				<br><br>
+				Huollamme soittimenne ammattitaidolla ja yleiseen hintatasoon nähden edullisesti.
+				</div>
+			  </div>
+			</div>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h2 class="panel-title">
+				  <center>
+				  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Soittimen ostajalle eka huolto ilmaiseksi!</a>
+				  </center>
+				</h2>
+			  </div>
+			  <div id="collapse2" class="panel-collapse collapse">
+				<div class="panel-body">
+				Kielisoittimien mukaan tulee aina huoltolappu, jolla asiakas saa soittimelle ensimmäisen huollon ilmaiseksi. Huoltolapun arvo vaihtelee 30-60 EUR välillä riippuen esimerkiksi kitaran tallan tyypistä. Huom! Annamme huoltolapun myös käytetyn soittimen oston yhteydessä.
+			    </div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="img/infokuva.jpg" alt="Infokuva">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- tästä alkaa galleriat, niitä tulee kolme  -->
+      <!-- 1. Galleria -------------------------------->
+
+      <div class="row featurette" id="galleria1">
+        <div class="col-md-5">
+			<div class="lb-dataContainer">
+			  <a href="img/galleria1_kuva01_iso.jpg" data-lightbox="roadtrip1"><img src="img/galleria1_kuva01_pieni.jpg"></a>
+			  <a href="img/galleria1_kuva02_iso.jpg" data-lightbox="roadtrip1"><img src="img/galleria1_kuva02_pieni.jpg"></a>
+			  <a href="img/galleria1_kuva03_iso.jpg" data-lightbox="roadtrip1"><img src="img/galleria1_kuva03_pieni.jpg"></a>
+			  <a href="img/galleria1_kuva04_iso.jpg" data-lightbox="roadtrip1"><img src="img/galleria1_kuva04_pieni.jpg"></a>
+			  <a href="img/galleria1_kuva05_iso.jpg" data-lightbox="roadtrip1"><img src="img/galleria1_kuva05_pieni.jpg"></a>
+			  <a href="img/galleria1_kuva06_iso.jpg" data-lightbox="roadtrip1"><img src="img/galleria1_kuva06_pieni.jpg"></a>
+			  <a href="img/galleria1_kuva07_iso.jpg" data-lightbox="roadtrip1"><img src="img/galleria1_kuva07_pieni.jpg"></a>
+			  <a href="img/galleria1_kuva08_iso.jpg" data-lightbox="roadtrip1"><img src="img/galleria1_kuva08_pieni.jpg"></a>
+			</div>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Kitarat, bassot, vahvistimet, rummut, kosketinsoittimet</h2>
+          <p class="lead">Kaikki bändisoittimet</p>
+          <p class="lead">Fender, Gibson, ESP, PRS, Tokai, Mesa Boogie, Tama, Kumu, Roland... you name it.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+       <!-- 2. Galleria -------------------------------->
+
+      <div class="row featurette" id="galleria2">
+        <div class="col-md-5">
+		  <a href="img/galleria2_kuva01_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva01_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva02_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva02_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva03_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva03_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva04_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva04_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva05_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva05_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva06_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva06_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva07_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva07_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva08_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva08_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva09_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva09_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva10_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva10_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva11_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva11_pieni.jpg"></a>
+		  <a href="img/galleria2_kuva12_iso.jpg" data-lightbox="roadtrip2"><img src="img/galleria2_kuva12_pieni.jpg"></a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Efektit, PA-kamat, tarvikkeet yms</h2>
+          <p class="lead">Pedaalit kitaralle, bassolle, kiippareille...</p>
+          <p class="lead">PA-kamat, mikserit, mikit, kaapelit jne.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+       <!-- 3. Galleria -------------------------------->
+
+      <div class="row featurette" id="galleria3">
+        <div class="col-md-5">
+		  <img id="zoom_01" src='img/zoom1pieni.jpg' data-zoom-image="img/zoom1iso.jpg.jpg"/>
+		  <img id="zoom_02" src='img/zoom2pieni.jpg' data-zoom-image="img/zoom2iso.jpg.jpg"/>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Juuri saapuneet erikoisemmat tuotteet</h2>
+          <p class="lead">Taidolla entisöity vanha mandoliini</p>
+          <p class="lead">Kotimaiset käsityönä tehdyt congat</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- Lopuksi yhteystiedot ja lomake-->
+
+      <div class="row featurette" id="yhteystiedot">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Myyntitili?</h2>
+		  <p class="lead">Onko sinulla jäänyt nurkkiin pyörimään soittimia tai muita musiikkilaitteita joita et enää tarvitse? Tuo ne meille myytäväksi, muutetaan ne rahaksi!</p>
+		  <p>
+		  Tuo ensin laite paikan päälle. Arvioidaan laitteen kunto ja arvo ja laitetaan se meille nettiin myyntiin. Käytetyt soittimet liikkuvat yleensä hyvin. Myyntitili tarkoittaa, että laitteen omistusoikeus säilyy sinulla itselläsi. Me täällä sitten myymme sen pois ja saat ennalta sovitun määrän rahaa laitteesta kun se on myyty. Tämä on vaivaton tapa laittaa soitin kiertoon.
+		  </p>
+          <p class="lead">Ota yhteyttä soittamalla, sähköpostitse tai alla olevalla lomakkeella.</p>
+			<a href="#lomake" class="show_hide">Näytä/piilota yhteydenottolomake</a><br />
+			<div class="slidingDiv">
+				<div class="container" id="lomake">
+				  <h3>Yhteydenottolomake</h3>
+				  <form class="form-horizontal">
+					<div class="form-group">
+					  <label class="control-label col-sm-1" for="nimi">Nimi:</label>
+					  <div class="col-sm-6">
+						<input type="text" class="form-control" id="nimi" placeholder="Nimi">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label class="control-label col-sm-1" for="email">Sähköposti:</label>
+					  <div class="col-sm-6">
+						<input type="email" class="form-control" id="email" placeholder="Email">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label class="control-label col-sm-1" for="puhelin">Puhelin:</label>
+					  <div class="col-sm-6">
+						<input type="tel" class="form-control" id="puhelin" placeholder="Puhelin">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label class="control-label col-sm-1" for="viesti">Viesti:</label>
+					  <div class="col-sm-6">
+						<textarea class="form-control" rows="5" id="viesti"></textarea>
+					  </div>
+					</div>
+					<div class="form-group">
+					  <div class="col-sm-offset-1 col-sm-6">
+						<button type="submit" class="btn btn-default">Lähetä</button>
+					  </div>
+					</div>
+				  </form>
+				</div>
+		  </div>
+			<div id="page-wrap">
+			<table>
+				<tbody>
+					<tr>
+					  <td>Olavi Granström</td>
+					  <td>olli@musicbox.fi</td>
+					  <td>0505126344</td>
+					</tr>
+					<tr>
+					  <td>Aarne Tenkanen</td>
+					  <td>arska@musicbox.fi</td>
+					  <td>0504875566</td>
+					</tr>
+					<tr>
+					  <td>Tarja Loponen</td>
+					  <td>tarja@musicbox.fi</td>
+					  <td>0505117887</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			</div>
+        </div>
+        <div class="col-md-5">
+          <h2 class="featurette-heading">Näin löydät meidät</h2>
+		  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d584.605955909839!2d25.090126137129346!3d60.472084330312896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468e006424161c9d%3A0x7d7c6fc80e9a5df4!2zTWFubmlsYW50aWUgMzAsIDA0NDAwIErDpHJ2ZW5ww6TDpA!5e0!3m2!1sfi!2sfi!4v1477050919672" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+		  <p>Mannilantie 30, 04400 Järvenpää</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <!-- täydennä tiedot -->
+      <footer>
+        <p class="pull-right"><a href="#">Alkuun</a></p>
+        <p>&copy; 2016 MusicBox Oy &middot; Mannilantie 30, 04400 Järvenpää &middot; +358505126344</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+	<script>
+		$('#zoom_01').elevateZoom({
+		zoomType: "lens",
+		lensShape : "round",
+		lensSize : 200
+	   });
+		$('#zoom_02').elevateZoom({
+		zoomType: "lens",
+		lensShape : "round",
+		lensSize : 200
+	   });
+	</script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$(".slidingDiv").hide();
+		$(".show_hide").show();
+		
+		$('.show_hide').click(function(){
+		$(".slidingDiv").slideToggle();
+		});
+
+	});
+
+	</script>
+
+  </body>
+</html>
